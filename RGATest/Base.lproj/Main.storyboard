@@ -31,7 +31,7 @@
             </objects>
             <point key="canvasLocation" x="-758" y="137"/>
         </scene>
-        <!--Contacts-->
+        <!--Contatos-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ContactsViewController" customModule="RGATest" customModuleProvider="target" sceneMemberID="viewController">
@@ -44,7 +44,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="79" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mA4-gF-uTE">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="79" id="H0D-BE-j3K" customClass="ContactTableViewCell" customModule="RGATest" customModuleProvider="target">
@@ -87,16 +87,30 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ZWQ-y4-fe3"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" placeholder="Buscar Contato" translatesAutoresizingMaskIntoConstraints="NO" id="S4I-Vd-nmU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="uJd-EH-kTc"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mA4-gF-uTE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AGv-YH-ZgP"/>
+                            <constraint firstItem="S4I-Vd-nmU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Giq-Kb-wpD"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mA4-gF-uTE" secondAttribute="bottom" id="NOB-9i-xI2"/>
-                            <constraint firstItem="mA4-gF-uTE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="RGg-IT-FJg"/>
                             <constraint firstAttribute="trailing" secondItem="mA4-gF-uTE" secondAttribute="trailing" id="Uyg-Cy-GUh"/>
+                            <constraint firstItem="S4I-Vd-nmU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aKC-S6-NfF"/>
+                            <constraint firstAttribute="trailing" secondItem="S4I-Vd-nmU" secondAttribute="trailing" id="foD-uU-e58"/>
+                            <constraint firstItem="mA4-gF-uTE" firstAttribute="top" secondItem="S4I-Vd-nmU" secondAttribute="bottom" id="xN7-gh-XJ9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Contacts" id="YJJ-Pb-V3O">
+                    <navigationItem key="navigationItem" title="Contatos" id="YJJ-Pb-V3O">
                         <barButtonItem key="rightBarButtonItem" image="EditIcon" id="16T-Gl-nAg">
                             <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -105,6 +119,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="search" destination="S4I-Vd-nmU" id="Suk-tJ-hTW"/>
                         <outlet property="table" destination="mA4-gF-uTE" id="Cvj-A8-Z42"/>
                     </connections>
                 </viewController>

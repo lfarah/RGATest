@@ -11,6 +11,7 @@ import EZSwiftExtensions
 
 class ContactViewModel {
     
+    var contacts: [Contact] = []
     func getContacts(handler: @escaping (_ contacts: [Contact]) -> Void) {
         
         Networker().downloadContacts { (contactsJSON) in
@@ -28,7 +29,21 @@ class ContactViewModel {
                 let contact = Contact(name: name, email: email, birthdate: birthdate, bio: bio, photoURL: photoURL)
                 contacts.append(contact)
             }
+            self.contacts = contacts
             handler(contacts)
+        }
+    }
+    
+    func searchContacts(text: String) -> [Contact] {
+        
+        if text == "" {
+            return contacts
+        } else {
+            let filtered = contacts.filter{ (Container) -> Bool in
+                let range = Container.name.range(of: text, options: .caseInsensitive)
+                return range != nil
+            }
+            return filtered
         }
     }
 }

@@ -14,13 +14,16 @@ class ContactsViewController: UIViewController {
 
     @IBOutlet weak var table: UITableView!
     var contacts: [Contact] = []
+    @IBOutlet weak var search: UISearchBar!
+    
+    let viewModel = ContactViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        ContactViewModel().getContacts { (contacts) in
+        viewModel.getContacts { (contacts) in
             self.contacts = contacts
             self.table.reloadData()
         }
@@ -66,10 +69,36 @@ extension ContactsViewController: UITableViewDataSource {
         return cell!
     }
 }
+
 // MARK: - UITableViewDelegate
 extension ContactsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
+}
+
+// MARK: - UISearchBarDelegate
+extension ContactsViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        searchBar.showsCancelButton = true
+        contacts = viewModel.searchContacts(text: searchText)
+        table.reloadData()
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.text = ""
+        contacts = viewModel.searchContacts(text: "")
+        table.reloadData()
+        searchBar.resignFirstResponder()
+    }
+    
 }
