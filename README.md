@@ -21,6 +21,10 @@ Chosen architecture: MVVM
 `ContactsViewController.swift`: Main ViewController with list
 `ContactDetailViewController.swift`: Detail ViewController with more informations about the contact
 
+## Extra Functionalities
+* Search for contact
+* Tap on contact's email to send an email
+
 ## What Should Change if I had more time
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Piso igitur hoc modo, vir optimus tuique, ut scis, amantissimus. Eaedem res maneant alio modo. Duo Reges: constructio interrete. Saepe ab Aristotele, a Theophrasto mirabiliter est laudata per se ipsa rerum scientia
 
