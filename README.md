@@ -15,6 +15,18 @@ Open ```RGATest.xcworkspace``` and press <kbd>Command</kbd>+<kbd>R</kbd>
 4. Copy the redeem code you got from Testflight's email and paste in Testflight's app
 5. Download ```RGATest```
 
+## General Explanation of code and app
+Chosen architecture: MVVM
+`Contact.swift` : Model
+`ContactViewModel.swift`: ViewModel
+`Constants.swift`: Used to avoid typos: [BLOG POST HERE]()
+`Networker.swift`: Used to make all network requests
+`ContactsViewController.swift`: Main ViewController with list
+`ContactDetailViewController.swift`: Detail ViewController with more informations about the contact
+
+## What Should Change if I had more time
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Piso igitur hoc modo, vir optimus tuique, ut scis, amantissimus. Eaedem res maneant alio modo. Duo Reges: constructio interrete. Saepe ab Aristotele, a Theophrasto mirabiliter est laudata per se ipsa rerum scientia
+
 ## Libraries Used
 
 #### EZSwiftExtensions
@@ -28,3 +40,7 @@ Open ```RGATest.xcworkspace``` and press <kbd>Command</kbd>+<kbd>R</kbd>
 #### Kingfisher
 * Description: A lightweight, pure-Swift library for downloading and caching images from the web.
 * Justification: Kingfisher handles async image downloading, making sure the UI is not blocked or the table view doesn't have a recycling problem. It is, by far, the easiest ways to load images in a TableView
+
+#### Swiftlint
+* Description: A tool to enforce Swift style and conventions
+* Justification: Swiftlint enforces me to write pretty Swift code, giving me issues and errors if I use more spaces that I was supposed to, force-unwrapped, wrote a long method name, etc... I use it on every single project. It basically allows me to write better and more stable code
