@@ -8,6 +8,13 @@
 #### Xcode
 Open ```RGATest.xcworkspace``` and press <kbd>Command</kbd>+<kbd>R</kbd>
 
+#### Testflight
+1. [Open this link]() and type your iTunes email account
+2. Open your email and accept to test RGATest
+3. Download the Testflight app
+4. Copy the redeem code you got from Testflight's email and paste in Testflight's app
+5. Download ```RGATest```
+
 ## Libraries Used
 
 #### EZSwiftExtensions
