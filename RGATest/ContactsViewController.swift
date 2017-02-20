@@ -32,9 +32,19 @@ class ContactsViewController: UIViewController {
         nav?.tintColor = UIColor.white
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     @IBAction func butEditTable(_ sender: Any) {
         
         table.setEditing(!table.isEditing, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? ContactDetailViewController {
+            dest.contact = sender as? Contact
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -76,6 +86,7 @@ extension ContactsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "selectedContact", sender: contacts[indexPath.row])
     }
 }
 

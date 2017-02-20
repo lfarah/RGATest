@@ -17,14 +17,8 @@ class RGATestUITests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
     
     override func tearDown() {
@@ -48,6 +42,22 @@ class RGATestUITests: XCTestCase {
         let tablesQuery = app.tables
         tablesQuery.staticTexts["Name Person4"].swipeLeft()
         tablesQuery.buttons["Delete"].tap()
+    }
+    
+    func testSearch() {
+        
+        let searchField = app.searchFields["Buscar Contato"]
+        searchField.tap()
+        searchField.typeText("Name person5")
+        app.buttons["Search"].tap()
+        
+        // Name Person 5 should appear
+        let person5 = app.tables.staticTexts["Name Person5"]
+        XCTAssertTrue(person5.exists)
+        
+        // TableView should only have one contact
+        let cellCount = app.tables.count
+        XCTAssertEqual(cellCount, 1)
     }
     
 }

@@ -27,4 +27,12 @@ class RGATestTests: XCTestCase {
             XCTAssertTrue(contacts.count > 0)
         }
     }
+    
+    func testSearch() {
+        
+        viewModel.getContacts {_ in
+            let contacts = self.viewModel.searchContacts(text: "Name Person5")
+            XCTAssertEqual(contacts.count, 1)
+        }
+    }
 }

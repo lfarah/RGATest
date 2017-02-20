@@ -22,7 +22,9 @@ class ContactViewModel {
                 let name = dic["name"] as? String ?? ""
                 let email = dic["email"] as? String ?? ""
                 let birthdateString = dic["born"] as? String ?? ""
-                let birthdate = Date(fromString: birthdateString, format: "dd/mm/yyyy")
+                let birthdate = Date(fromString: birthdateString, format: "dd/MM/yyyy")
+                print(birthdateString)
+                print(birthdate?.toString())
                 let bio = dic["bio"] as? String ?? ""
                 let photoString = dic["photo"] as? String ?? ""
                 let photoURL = URL(string: photoString)!
@@ -39,7 +41,7 @@ class ContactViewModel {
         if text == "" {
             return contacts
         } else {
-            let filtered = contacts.filter{ (Container) -> Bool in
+            let filtered = contacts.filter { (Container) -> Bool in
                 let range = Container.name.range(of: text, options: .caseInsensitive)
                 return range != nil
             }
