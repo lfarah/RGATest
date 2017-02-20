@@ -8,6 +8,7 @@ target 'RGATest' do
   # Pods for RGATest
   pod 'EZSwiftExtensions'
   pod 'Alamofire'
+  pod 'Kingfisher'
   
   target 'RGATestTests' do
     inherit! :search_paths

@@ -23,8 +23,8 @@ class ContactViewModel {
                 let birthdateString = dic["born"] as? String ?? ""
                 let birthdate = Date(fromString: birthdateString, format: "dd/mm/yyyy")
                 let bio = dic["bio"] as? String ?? ""
-                let photoURL = dic["photo"] as? String ?? ""
-
+                let photoString = dic["photo"] as? String ?? ""
+                let photoURL = URL(string: photoString)!
                 let contact = Contact(name: name, email: email, birthdate: birthdate, bio: bio, photoURL: photoURL)
                 contacts.append(contact)
             }

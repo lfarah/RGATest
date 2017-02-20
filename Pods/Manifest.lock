@@ -1,15 +1,18 @@
 PODS:
   - Alamofire (4.3.0)
   - EZSwiftExtensions (1.8)
+  - Kingfisher (3.4.0)
 
 DEPENDENCIES:
   - Alamofire
   - EZSwiftExtensions
+  - Kingfisher
 
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   EZSwiftExtensions: b58e0fe7702e30c4f01bd039658fe84b4fdf5bd5
+  Kingfisher: 5690cfb3d1bddf3a98d679a3a34d0b7294974ed2
 
-PODFILE CHECKSUM: 8bd12f8c4a16c3a4d59c8e33861539d3ef93a861
+PODFILE CHECKSUM: 74f8ac0d4be7190dea484874ae33b87352a10ce3
 
 COCOAPODS: 1.2.0.beta.1

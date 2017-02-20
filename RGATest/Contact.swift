@@ -13,5 +13,5 @@ struct Contact {
     var email: String
     var birthdate: Date? //TODO: Explain
     var bio: String
-    var photoURL: String
+    var photoURL: URL
 }

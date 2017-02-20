@@ -20,6 +20,8 @@
 		C2C5B43C1E5B500D0092A755 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C5B43B1E5B500D0092A755 /* ContactViewModel.swift */; };
 		C2C5B43E1E5B50B20092A755 /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C5B43D1E5B50B20092A755 /* Networker.swift */; };
 		C2C5B4401E5B512C0092A755 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C5B43F1E5B512C0092A755 /* Constants.swift */; };
+		C2C5B4421E5B56F90092A755 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C5B4411E5B56F90092A755 /* ContactsViewController.swift */; };
+		C2C5B4441E5B59B40092A755 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C5B4431E5B59B40092A755 /* ContactTableViewCell.swift */; };
 		ED79861D4DBD995379F68F7D /* Pods_RGATest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0816A07C73FD48F50308A6 /* Pods_RGATest.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,8 @@
 		C2C5B43B1E5B500D0092A755 /* ContactViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		C2C5B43D1E5B50B20092A755 /* Networker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
 		C2C5B43F1E5B512C0092A755 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C2C5B4411E5B56F90092A755 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		C2C5B4431E5B59B40092A755 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		CDC4E8738F840FFEE6884940 /* Pods-RGATest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RGATest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RGATest/Pods-RGATest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +156,8 @@
 				C2C5B43F1E5B512C0092A755 /* Constants.swift */,
 				C2C5B43B1E5B500D0092A755 /* ContactViewModel.swift */,
 				C2C5B40E1E5B4F160092A755 /* Main.storyboard */,
+				C2C5B4431E5B59B40092A755 /* ContactTableViewCell.swift */,
+				C2C5B4411E5B56F90092A755 /* ContactsViewController.swift */,
 				C2C5B4111E5B4F160092A755 /* Assets.xcassets */,
 				C2C5B4131E5B4F160092A755 /* LaunchScreen.storyboard */,
 				C2C5B4161E5B4F160092A755 /* Info.plist */,
@@ -476,8 +482,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2C5B43E1E5B50B20092A755 /* Networker.swift in Sources */,
+				C2C5B4421E5B56F90092A755 /* ContactsViewController.swift in Sources */,
 				C2C5B4391E5B4F6E0092A755 /* Contact.swift in Sources */,
 				C2C5B43C1E5B500D0092A755 /* ContactViewModel.swift in Sources */,
+				C2C5B4441E5B59B40092A755 /* ContactTableViewCell.swift in Sources */,
 				C2C5B40D1E5B4F160092A755 /* ViewController.swift in Sources */,
 				C2C5B40B1E5B4F160092A755 /* AppDelegate.swift in Sources */,
 				C2C5B4401E5B512C0092A755 /* Constants.swift in Sources */,
