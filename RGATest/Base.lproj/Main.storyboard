@@ -198,6 +198,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="Egv-Qf-WDR" id="aBK-jK-nYU"/>
+                                    <outlet property="delegate" destination="Egv-Qf-WDR" id="mPx-MM-o3N"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdh-vQ-wUh">

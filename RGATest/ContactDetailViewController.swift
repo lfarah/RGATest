@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class ContactDetailViewController: UIViewController {
     
@@ -79,7 +80,19 @@ extension ContactDetailViewController: UITableViewDelegate {
         
         if indexPath.row == 0 {
             //Email
-            //TODO: Implement email
+            let recipients = [contact.email]
+            let composer = MFMailComposeViewController()
+            composer.mailComposeDelegate = self
+            composer.setToRecipients(recipients)
+            
+            self.present(composer, animated: true, completion: nil)
         }
+    }
+}
+
+extension ContactDetailViewController: MFMailComposeViewControllerDelegate {
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        self.dismissVC(completion: nil)
     }
 }
