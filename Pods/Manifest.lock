@@ -1,0 +1,15 @@
+PODS:
+  - Alamofire (4.3.0)
+  - EZSwiftExtensions (1.8)
+
+DEPENDENCIES:
+  - Alamofire
+  - EZSwiftExtensions
+
+SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  EZSwiftExtensions: b58e0fe7702e30c4f01bd039658fe84b4fdf5bd5
+
+PODFILE CHECKSUM: 8bd12f8c4a16c3a4d59c8e33861539d3ef93a861
+
+COCOAPODS: 1.2.0.beta.1

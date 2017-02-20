@@ -1,0 +1,6 @@
+framework module Pods_RGATestTests {
+  umbrella header "Pods-RGATestTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
