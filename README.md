@@ -1,8 +1,5 @@
 # RGATest
 
-# Contents
-
-
 ## How to Generate App
 
 #### Xcode
