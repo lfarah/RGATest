@@ -11,7 +11,9 @@
 import XCTest
 
 class RGATestUITests: XCTestCase {
-        
+    
+    var app = XCUIApplication()
+    
     override func setUp() {
         super.setUp()
         
@@ -30,9 +32,22 @@ class RGATestUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testEditAndRemove() {
+        
+        let editiconButton = app.navigationBars["Contatos"].buttons["EditIcon"]
+        editiconButton.tap()
+        
+        let tablesQuery = app.tables
+        tablesQuery.buttons["Delete Name Person2"].tap()
+        tablesQuery.buttons["Delete"].tap()
+        editiconButton.tap()
+    }
+    
+    func testSwipeToDelete() {
+        
+        let tablesQuery = app.tables
+        tablesQuery.staticTexts["Name Person4"].swipeLeft()
+        tablesQuery.buttons["Delete"].tap()
     }
     
 }
