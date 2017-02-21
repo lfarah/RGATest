@@ -13,6 +13,7 @@ target 'RGATest' do
   pod 'KMPlaceholderTextView'
   pod 'IQKeyboardManagerSwift'
   pod 'DatePickerDialog'
+  pod 'ImagePicker'
   
   target 'RGATestTests' do
     inherit! :search_paths

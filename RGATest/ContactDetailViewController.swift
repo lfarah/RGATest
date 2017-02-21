@@ -9,6 +9,7 @@
 
 import UIKit
 import MessageUI
+import ImagePicker
 
 class ContactDetailViewController: UIViewController {
     
