@@ -5,6 +5,7 @@
 //  Created by Lucas Farah on 2/20/17.
 //  Copyright © 2017 Awesome Labs. All rights reserved.
 //
+// swiftlint:disable line_length
 
 import UIKit
 import MessageUI

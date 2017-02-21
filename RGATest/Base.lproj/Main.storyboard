@@ -31,6 +31,123 @@
             </objects>
             <point key="canvasLocation" x="-758" y="137"/>
         </scene>
+        <!--Add Contact View Controller-->
+        <scene sceneID="H7j-dR-FAo">
+            <objects>
+                <viewController id="k3e-JX-JVv" customClass="AddContactViewController" customModule="RGATest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fcP-vO-ojD"/>
+                        <viewControllerLayoutGuide type="bottom" id="hkV-Yq-iV0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="dZE-Hq-Pff">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gja-sx-Nhr" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="18" y="164" width="339" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                        <color key="value" red="0.88235294119999996" green="0.1215686275" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                        <color key="value" red="0.2156862745" green="0.2901960784" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="k3e-JX-JVv" id="bWm-Vy-dUI"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ouc-bh-LqP" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="18" y="202" width="339" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                        <color key="value" red="0.88235294119999996" green="0.1215686275" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                        <color key="value" red="0.2156862745" green="0.2901960784" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="k3e-JX-JVv" id="ebT-Q6-sjL"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Data de Nascimento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nb3-VG-fSH" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="18" y="240" width="339" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                        <color key="value" red="0.88235294119999996" green="0.1215686275" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                        <color key="value" red="0.2156862745" green="0.2901960784" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0u-nN-tRU">
+                                <rect key="frame" x="132" y="19" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="Vd0-Cs-qtS"/>
+                                    <constraint firstAttribute="width" constant="110" id="vsC-Qb-22q"/>
+                                </constraints>
+                                <state key="normal" image="EmptyUser"/>
+                                <connections>
+                                    <action selector="butImage:" destination="k3e-JX-JVv" eventType="touchUpInside" id="b81-tu-4z0"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qgt-jD-laL" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
+                                <rect key="frame" x="18" y="278" width="339" height="61"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="CIa-Xo-HBB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Write a Bio..."/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="k3e-JX-JVv" id="uGc-Hf-ho4"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nb3-VG-fSH" secondAttribute="trailing" constant="2" id="DWY-qF-B5p"/>
+                            <constraint firstItem="B0u-nN-tRU" firstAttribute="centerX" secondItem="dZE-Hq-Pff" secondAttribute="centerX" id="KYF-gZ-hAI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qgt-jD-laL" secondAttribute="trailing" constant="2" id="PXr-xa-TO1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ouc-bh-LqP" secondAttribute="trailing" constant="2" id="UCf-tl-nLF"/>
+                            <constraint firstItem="ouc-bh-LqP" firstAttribute="leading" secondItem="dZE-Hq-Pff" secondAttribute="leadingMargin" constant="2" id="VpA-xy-DRL"/>
+                            <constraint firstItem="gja-sx-Nhr" firstAttribute="top" secondItem="B0u-nN-tRU" secondAttribute="bottom" constant="35" id="dg4-dt-B9M"/>
+                            <constraint firstItem="gja-sx-Nhr" firstAttribute="leading" secondItem="dZE-Hq-Pff" secondAttribute="leadingMargin" constant="2" id="drc-oI-d5m"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gja-sx-Nhr" secondAttribute="trailing" constant="2" id="gVt-Cb-XQi"/>
+                            <constraint firstItem="B0u-nN-tRU" firstAttribute="top" secondItem="fcP-vO-ojD" secondAttribute="bottom" constant="19" id="jjX-G4-vre"/>
+                            <constraint firstItem="Qgt-jD-laL" firstAttribute="leading" secondItem="dZE-Hq-Pff" secondAttribute="leadingMargin" constant="2" id="l0o-Nx-0Y4"/>
+                            <constraint firstItem="Qgt-jD-laL" firstAttribute="top" secondItem="Nb3-VG-fSH" secondAttribute="bottom" constant="8" id="lgP-zS-xx6"/>
+                            <constraint firstItem="Nb3-VG-fSH" firstAttribute="top" secondItem="ouc-bh-LqP" secondAttribute="bottom" constant="8" id="paG-oT-Y7F"/>
+                            <constraint firstItem="Nb3-VG-fSH" firstAttribute="leading" secondItem="dZE-Hq-Pff" secondAttribute="leadingMargin" constant="2" id="t33-Sq-r2Q"/>
+                            <constraint firstItem="ouc-bh-LqP" firstAttribute="top" secondItem="gja-sx-Nhr" secondAttribute="bottom" constant="8" id="uAP-NJ-IuR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="butImage" destination="B0u-nN-tRU" id="v36-Cb-Ulz"/>
+                        <outlet property="txtBio" destination="Qgt-jD-laL" id="nBY-UL-7YH"/>
+                        <outlet property="txtBirthdate" destination="Nb3-VG-fSH" id="vPV-BA-Xjm"/>
+                        <outlet property="txtEmail" destination="ouc-bh-LqP" id="oUP-0d-TCq"/>
+                        <outlet property="txtName" destination="gja-sx-Nhr" id="W1H-c6-ZGN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T6h-nh-0So" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="949.60000000000002" y="-277.51124437781112"/>
+        </scene>
         <!--Contatos-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -111,10 +228,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Contatos" id="YJJ-Pb-V3O">
-                        <barButtonItem key="rightBarButtonItem" image="EditIcon" id="16T-Gl-nAg">
+                        <barButtonItem key="leftBarButtonItem" image="EditIcon" id="16T-Gl-nAg">
                             <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="butEditTable:" destination="BYZ-38-t0r" id="bQs-h8-XAm"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="m3B-Td-wA1">
+                            <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="k3e-JX-JVv" kind="show" id="Amo-rN-1qN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -244,7 +367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfI-0Q-CMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="139.880059970015"/>
+            <point key="canvasLocation" x="951" y="401"/>
         </scene>
     </scenes>
     <resources>

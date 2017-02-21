@@ -9,6 +9,10 @@ target 'RGATest' do
   pod 'EZSwiftExtensions'
   pod 'Alamofire'
   pod 'Kingfisher'
+  pod 'SkyFloatingLabelTextField'
+  pod 'KMPlaceholderTextView'
+  pod 'IQKeyboardManagerSwift'
+  pod 'DatePickerDialog'
   
   target 'RGATestTests' do
     inherit! :search_paths
