@@ -5,12 +5,12 @@ Open ```RGATest.xcworkspace``` and press <kbd>Command</kbd>+<kbd>R</kbd>
 
 ## General Explanation of code and app
 Chosen architecture: MVVM
-`Contact.swift` : Model
-`ContactViewModel.swift`: ViewModel
-`Constants.swift`: Used to manage global variables: [Blog Post talking about it here](http://www.jessesquires.com/swift-namespaced-constants/)
-`Networker.swift`: Used to make all network requests
-`ContactsViewController.swift`: Main ViewController with list
-`ContactDetailViewController.swift`: Detail ViewController with more informations about the contact
+* `Contact.swift` : Model
+* `ContactViewModel.swift`: ViewModel
+* `Constants.swift`: Used to manage global variables: [Blog Post talking about it here](http://www.jessesquires.com/swift-namespaced-constants/)
+* `Networker.swift`: Used to make all network requests
+* `ContactsViewController.swift`: Main ViewController with list
+* `ContactDetailViewController.swift`: Detail ViewController with more informations about the contact
 
 ## Extra Functionalities
 * Search for contact
