@@ -15,7 +15,7 @@
         <scene sceneID="7cU-9X-AX5">
             <objects>
                 <navigationController id="hHN-39-u9X" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="fuX-y0-zch">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="fuX-y0-zch">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.88235294117647056" green="0.12156862745098039" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
@@ -39,12 +39,12 @@
                         <viewControllerLayoutGuide type="top" id="fcP-vO-ojD"/>
                         <viewControllerLayoutGuide type="bottom" id="hkV-Yq-iV0"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="dZE-Hq-Pff">
+                    <view key="view" contentMode="scaleToFill" id="dZE-Hq-Pff">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gja-sx-Nhr" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="18" y="164" width="339" height="30"/>
+                                <rect key="frame" x="18" y="164" width="339" height="39"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -61,7 +61,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ouc-bh-LqP" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="18" y="202" width="339" height="30"/>
+                                <rect key="frame" x="18" y="211" width="339" height="39.5"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -78,7 +78,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Data de Nascimento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nb3-VG-fSH" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="18" y="240" width="339" height="30"/>
+                                <rect key="frame" x="18" y="258.5" width="339" height="39"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -103,7 +103,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qgt-jD-laL" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
-                                <rect key="frame" x="18" y="278" width="339" height="61"/>
+                                <rect key="frame" x="18" y="305.5" width="339" height="61"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61" id="CIa-Xo-HBB"/>

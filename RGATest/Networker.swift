@@ -9,7 +9,8 @@
 import Foundation
 import Alamofire
 
-//TODO: Explain: "MVVM and MVC share a common weakness: neither defines where the network logic of an app should go":  http://artsy.github.io/blog/2015/09/24/mvvm-in-swift/ 
+// As this post explains, MVVM doesn't define where the network logic should go, so I created Networker to handle network calls
+// http://artsy.github.io/blog/2015/09/24/mvvm-in-swift/ 
 
 struct Networker {
     

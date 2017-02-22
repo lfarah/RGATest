@@ -111,5 +111,4 @@ extension ContactsViewController: UISearchBarDelegate {
         table.reloadData()
         searchBar.resignFirstResponder()
     }
-    
 }

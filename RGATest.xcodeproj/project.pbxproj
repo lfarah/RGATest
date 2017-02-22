@@ -126,6 +126,49 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C2B183011E5D480700E5A704 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C2C5B4481E5BB3740092A755 /* AddContactViewController.swift */,
+				C2C5B4451E5B996C0092A755 /* ContactDetailViewController.swift */,
+				C2C5B4411E5B56F90092A755 /* ContactsViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		C2B183021E5D481000E5A704 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C2C5B4431E5B59B40092A755 /* ContactTableViewCell.swift */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		C2B183031E5D482500E5A704 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C2C5B4381E5B4F6E0092A755 /* Contact.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C2B183041E5D482D00E5A704 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C2C5B43B1E5B500D0092A755 /* ContactViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		C2B183051E5D483A00E5A704 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C2C5B43F1E5B512C0092A755 /* Constants.swift */,
+				C2C5B43D1E5B50B20092A755 /* Networker.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		C2C5B3FE1E5B4F160092A755 = {
 			isa = PBXGroup;
 			children = (
@@ -152,15 +195,12 @@
 			isa = PBXGroup;
 			children = (
 				C2C5B40A1E5B4F160092A755 /* AppDelegate.swift */,
-				C2C5B4381E5B4F6E0092A755 /* Contact.swift */,
-				C2C5B43D1E5B50B20092A755 /* Networker.swift */,
-				C2C5B43F1E5B512C0092A755 /* Constants.swift */,
-				C2C5B43B1E5B500D0092A755 /* ContactViewModel.swift */,
 				C2C5B40E1E5B4F160092A755 /* Main.storyboard */,
-				C2C5B4481E5BB3740092A755 /* AddContactViewController.swift */,
-				C2C5B4451E5B996C0092A755 /* ContactDetailViewController.swift */,
-				C2C5B4431E5B59B40092A755 /* ContactTableViewCell.swift */,
-				C2C5B4411E5B56F90092A755 /* ContactsViewController.swift */,
+				C2B183031E5D482500E5A704 /* Model */,
+				C2B183041E5D482D00E5A704 /* ViewModel */,
+				C2B183051E5D483A00E5A704 /* Helpers */,
+				C2B183011E5D480700E5A704 /* ViewController */,
+				C2B183021E5D481000E5A704 /* TableViewCell */,
 				C2C5B4111E5B4F160092A755 /* Assets.xcassets */,
 				C2C5B4131E5B4F160092A755 /* LaunchScreen.storyboard */,
 				C2C5B4161E5B4F160092A755 /* Info.plist */,
