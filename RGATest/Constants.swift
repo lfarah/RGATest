@@ -11,4 +11,8 @@ import Foundation
 struct Constants {
     
     static var baseURL = "https://s3-sa-east-1.amazonaws.com/rgasp-mobile-test/v1/"
+    
+    struct Segues {
+        static var selectedContact = "selectedContact"
+    }
 }

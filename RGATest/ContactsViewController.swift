@@ -9,27 +9,67 @@
 
 import UIKit
 import Kingfisher
+import RealmSwift
+import Realm
 
 class ContactsViewController: UIViewController {
-
+    
     @IBOutlet weak var table: UITableView!
-    var contacts: [Contact] = []
+    var contacts: Results<Contact>?
     @IBOutlet weak var search: UISearchBar!
     
     let viewModel = ContactViewModel()
+    var notificationToken: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         viewModel.getContacts { (contacts) in
-            self.contacts = contacts
-            self.table.reloadData()
+            
+            if let contacts = contacts {
+                self.contacts = contacts
+                self.table.reloadData()
+                self.observeRealmContacts()
+            }
         }
         
         let nav = self.navigationController?.navigationBar
         nav?.tintColor = UIColor.white
+    }
+    
+    func observeRealmContacts() {
+        
+        // Observe Results Notifications
+        notificationToken = contacts?.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
+            
+            print("change")
+            guard let tableView = self?.table else { return }
+            switch changes {
+            case .initial:
+                // Results are now populated and can be accessed without blocking the UI
+                tableView.reloadData()
+                break
+            case .update(_, let deletions, let insertions, let modifications):
+                // Query results have changed, so apply them to the UITableView
+                tableView.beginUpdates()
+                tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }),
+                                     with: .top)
+                tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}),
+                                     with: .top)
+                tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }),
+                                     with: .top)
+                tableView.endUpdates()
+                break
+            case .error(let error):
+                // An error occurred while opening the Realm file on the background worker thread
+                fatalError("\(error)")
+                break
+            }
+            
+            tableView.reloadData()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,23 +99,26 @@ extension ContactsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
-        //TODO: Remove with Realm later
         if editingStyle == .delete {
-            contacts.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            viewModel.remove(contact: contacts![indexPath.row])
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contacts.count
+        
+        if let contacts = contacts {
+            return contacts.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ContactTableViewCell
-       
-        let contact = contacts[indexPath.row]
+        
+        let contact = contacts![indexPath.row]
         cell?.lblContactName.text = contact.name
-        cell?.imgvContact.kf.setImage(with: contact.photoURL, placeholder: #imageLiteral(resourceName: "EmptyUser"))
+        cell?.imgvContact.kf.setImage(with: URL(string: contact.photoURL)!, placeholder: #imageLiteral(resourceName: "EmptyUser"))
         return cell!
     }
 }
@@ -86,7 +129,7 @@ extension ContactsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "selectedContact", sender: contacts[indexPath.row])
+        performSegue(withIdentifier: Constants.Segues.selectedContact, sender: contacts?[indexPath.row])
     }
 }
 

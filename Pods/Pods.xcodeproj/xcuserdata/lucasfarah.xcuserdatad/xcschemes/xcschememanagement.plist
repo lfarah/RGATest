@@ -59,6 +59,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Realm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RealmSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SkyFloatingLabelTextField.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -92,7 +102,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>6B5EA33B9BCF58C14396097945EB0363</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>84AD2270DE6378CC3C85C1A47A4D6141</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>857C2B1BAF38AA57202492426E015B62</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,7 +127,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AB3F9D101A81AEEFA2B84F4E2195BC7D</key>
+		<key>93BE661A0D73FE7AC81F3EC83AD8BA25</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B99D4AEF12AAD31B6D372FC77824A6CF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -118,11 +143,6 @@
 			<true/>
 		</dict>
 		<key>D53804E34279A83A61915C6ACA3C0D06</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E24A50C8B879DB45AA0D3704AA2D6978</key>
 		<dict>
 			<key>primary</key>
 			<true/>

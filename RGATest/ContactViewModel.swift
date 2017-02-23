@@ -8,42 +8,62 @@
 
 import Foundation
 import EZSwiftExtensions
+import RealmSwift
+import Realm
 
 class ContactViewModel {
     
-    var contacts: [Contact] = []
-    func getContacts(handler: @escaping (_ contacts: [Contact]) -> Void) {
+    func getContacts(handler: @escaping (_ contacts: Results<Contact>?) -> Void) {
         
-        Networker().downloadContacts { (contactsJSON) in
-            
-            var contacts: [Contact] = []
-            for dic in contactsJSON {
+        let databaseContacts = DatabaseManager().getContacts()
+        if databaseContacts.count > 0 {
+            handler(databaseContacts)
+        } else {
+            Networker().downloadContacts { (contactsJSON, error) in
                 
-                let name = dic["name"] as? String ?? ""
-                let email = dic["email"] as? String ?? ""
-                let birthdateString = dic["born"] as? String ?? ""
-                let birthdate = Date(fromString: birthdateString, format: "dd/MM/yyyy")
-                let bio = dic["bio"] as? String ?? ""
-                let photoString = dic["photo"] as? String ?? ""
-                let photoURL = URL(string: photoString)!
-                let contact = Contact(name: name, email: email, birthdate: birthdate, bio: bio, photoURL: photoURL)
-                contacts.append(contact)
+                if let contactArray = contactsJSON {
+
+                    for dic in contactArray {
+                        
+                        let contact = Contact()
+                        
+                        let birthdateString = dic["born"] as? String ?? ""
+                        let photoString = dic["photo"] as? String ?? ""
+                        contact.name = dic["name"] as? String ?? ""
+                        contact.email = dic["email"] as? String ?? ""
+                        contact.birthdate = Date(fromString: birthdateString, format: "dd/MM/yyyy")
+                        contact.bio = dic["bio"] as? String ?? ""
+                        contact.photoURL = photoString
+                        DatabaseManager().save(contact: contact)
+                    }
+                    handler(DatabaseManager().getContacts())
+                } else if let error = error {
+                    
+                    print(error.rawValue)
+                    handler(nil)
+                }
             }
-            self.contacts = contacts
-            handler(contacts)
         }
     }
     
-    func searchContacts(text: String) -> [Contact] {
-        
+    func searchContacts(text: String) -> Results<Contact> {
+
         if text == "" {
-            return contacts
+            
+            return DatabaseManager().getContacts()
         } else {
-            let filtered = contacts.filter { (Container) -> Bool in
-                let range = Container.name.range(of: text, options: .caseInsensitive)
-                return range != nil
-            }
-            return filtered
+            
+            return DatabaseManager().searchContacts(text: text)
         }
+    }
+    
+    func add(contact: Contact) {
+        
+        DatabaseManager().save(contact: contact)
+    }
+    
+    func remove(contact: Contact) {
+
+        DatabaseManager().remove(contact: contact)
     }
 }

@@ -5,6 +5,8 @@
 //  Created by Lucas Farah on 2/20/17.
 //  Copyright © 2017 Awesome Labs. All rights reserved.
 //
+// swiftlint:disable line_length
+// swiftlint:disable trailing_whitespace
 
 import Foundation
 import Alamofire
@@ -14,18 +16,19 @@ import Alamofire
 
 struct Networker {
     
-    func downloadContacts(handler: @escaping (_ contactsJSON: [[String: AnyObject]]) -> Void) {
+    func downloadContacts(handler: @escaping (_ contactsJSON: [[String: AnyObject]]?, _ error: ServerError?) -> Void) {
         
         let url = Constants.baseURL + "content.json"
         Alamofire.request(url, parameters: [:], encoding: JSONEncoding.default).responseJSON { response in
 
             if let JSON = response.result.value as? [[String: AnyObject]] {
                 
-                handler(JSON)
+                handler(JSON, nil)
             } else {
-                print(response)
+                
+                let error = ServerError.unexpectedResponse
+                handler(nil, error)
             }
         }
-
     }
 }

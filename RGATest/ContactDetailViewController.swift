@@ -24,7 +24,7 @@ class ContactDetailViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        imgvContact.kf.setImage(with: contact.photoURL, placeholder: #imageLiteral(resourceName: "EmptyUser"))
+        imgvContact.kf.setImage(with: URL(string: contact.photoURL)!, placeholder: #imageLiteral(resourceName: "EmptyUser"))
         imgvContact.roundSquareImage()
         imgvContact.addBorder(width: 3, color: .white)
         lblContactName.text = contact.name

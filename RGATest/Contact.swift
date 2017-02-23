@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import RealmSwift
+import Realm
 
-struct Contact {
-    var name: String
-    var email: String
-    var birthdate: Date? //TODO: Explain
-    var bio: String
-    var photoURL: URL
+class Contact: Object {
+    dynamic var name: String = ""
+    dynamic var email: String = ""
+    dynamic var birthdate: Date?
+    dynamic var bio: String = ""
+    dynamic var photoURL: String = ""
 }
