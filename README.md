@@ -13,6 +13,10 @@ Chosen architecture: MVVM
 * `ContactDetailViewController.swift`: Detail ViewController with more informations about the contact
 * `AddContactViewController.swift`: ViewController that handles user creation and editing
 
+#### Tests
+* Unit Tests
+* UI Tests
+
 ## Extra Functionalities
 * Search for contact
 * Tap on contact's email to send an email
@@ -20,6 +24,7 @@ Chosen architecture: MVVM
 ## What Should Change if I had more time
 * I'd mock my tests, making it easy to simulate different database scenarios.
 * I'd use BDD using the [Quick Framework](https://github.com/Quick/Quick)
+* I'd write more tests
 
 ## Libraries Used
 
