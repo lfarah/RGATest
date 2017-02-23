@@ -17,8 +17,10 @@ class RGATestUITests: XCTestCase {
     override func setUp() {
         super.setUp()
         
+        app.launchArguments = ["testMode"]
+
         continueAfterFailure = false
-        XCUIApplication().launch()
+        app.launch()
     }
     
     override func tearDown() {

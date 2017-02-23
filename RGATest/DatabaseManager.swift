@@ -9,14 +9,22 @@
 // swiftlint:disable trailing_whitespace
 
 import Foundation
-import Realm
 import RealmSwift
 
 class DatabaseManager {
     
+    var realm: Realm! {
+        
+            if NSClassFromString("XCTest") != nil || ProcessInfo.processInfo.arguments.contains("testMode") {
+                Realm.Configuration.defaultConfiguration.inMemoryIdentifier = "Tests"
+            }
+
+            let realm = try! Realm()
+            return realm
+   }
+    
     func save(contact: Contact) {
         
-        let realm = try! Realm()
         do {
             
             try realm.write {
@@ -30,7 +38,6 @@ class DatabaseManager {
     
     func remove(contact: Contact) {
         
-        let realm = try! Realm()
         try! realm.write {
             realm.delete(contact)
         }
@@ -38,7 +45,6 @@ class DatabaseManager {
     
     func getContacts() -> Results<Contact> {
         
-        let realm = try! Realm()
         let rounds = realm.objects(Contact.self)
         
         print(rounds.count)
@@ -47,8 +53,7 @@ class DatabaseManager {
     
     func searchContacts(text: String) -> Results<Contact> {
         
-        let realm = try! Realm()
-        let contacts = realm.objects(Contact.self).filter("name contains '\(text)'")
+        let contacts = realm.objects(Contact.self).filter("name CONTAINS[c] '\(text)'")
         return contacts
     }
     
