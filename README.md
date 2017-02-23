@@ -11,13 +11,20 @@ Chosen architecture: MVVM
 * `Networker.swift`: Used to make all network requests
 * `ContactsViewController.swift`: Main ViewController with list
 * `ContactDetailViewController.swift`: Detail ViewController with more informations about the contact
+* `AddContactViewController.swift`: ViewController that handles user creation and editing
+
+#### Tests
+* Unit Tests
+* UI Tests
 
 ## Extra Functionalities
 * Search for contact
 * Tap on contact's email to send an email
 
 ## What Should Change if I had more time
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Piso igitur hoc modo, vir optimus tuique, ut scis, amantissimus. Eaedem res maneant alio modo. Duo Reges: constructio interrete. Saepe ab Aristotele, a Theophrasto mirabiliter est laudata per se ipsa rerum scientia
+* I'd mock my tests, making it easy to simulate different database scenarios.
+* I'd use BDD using the [Quick Framework](https://github.com/Quick/Quick)
+* I'd write more tests
 
 ## Libraries Used
 
@@ -57,3 +64,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Piso igitur hoc modo, v
 * Description: 📷 Reinventing the way ImagePicker works.
 * Justification: HyperOslo is one of the biggest iOS open source groups. I've used many of their libraries. ImagePicker makes it really easy to implement a camera with album access with a much better UI & UX then the Apple's `UIImagePicker`.
 
+#### [SCLAlertView](https://github.com/vikmeup/SCLAlertView-Swift)
+* Description: Beautiful animated Alert View. Written in Swift
+* Justification: Apple's UIAlertController is really ugly and specially bad because it [always gives some ugly errors](http://stackoverflow.com/questions/29365540/swift-attempt-to-present-uialertcontroller-whose-view-is-not-in-the-window-hiera). SCLAlertView is a really easy to implement and really nice AlertView that already gives me special colors for Error, Success and Warnings.
