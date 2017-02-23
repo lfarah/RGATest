@@ -5,13 +5,24 @@ Open ```RGATest.xcworkspace``` and press <kbd>Command</kbd>+<kbd>R</kbd>
 
 ## General Explanation of code and app
 Chosen architecture: MVVM
-* `Contact.swift` : Model
+
+#### Model
+* `Contact.swift` : Contact Model
+* `Error.swift`: Error Model
+
+#### ViewModel
 * `ContactViewModel.swift`: ViewModel
-* `Constants.swift`: Used to manage global variables: [Blog Post talking about it here](http://www.jessesquires.com/swift-namespaced-constants/)
-* `Networker.swift`: Used to make all network requests
+
+##### ViewControllers
 * `ContactsViewController.swift`: Main ViewController with list
 * `ContactDetailViewController.swift`: Detail ViewController with more informations about the contact
 * `AddContactViewController.swift`: ViewController that handles user creation and editing
+
+#### Helpers
+* `Constants.swift`: Used to manage global variables: [Blog Post talking about it here](http://www.jessesquires.com/swift-namespaced-constants/)
+* `Networker.swift`: Used to make all network requests
+* `Notifier.swift`: Used to make Local Alert calls
+* 'DatabaseManager.swift': Used to make all Realm interactions
 
 #### Tests
 * Unit Tests
