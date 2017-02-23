@@ -22,7 +22,7 @@ Chosen architecture: MVVM
 * `Constants.swift`: Used to manage global variables: [Blog Post talking about it here](http://www.jessesquires.com/swift-namespaced-constants/)
 * `Networker.swift`: Used to make all network requests
 * `Notifier.swift`: Used to make Local Alert calls
-* 'DatabaseManager.swift': Used to make all Realm interactions
+* `DatabaseManager.swift`: Used to make all Realm interactions
 
 #### Tests
 * Unit Tests
