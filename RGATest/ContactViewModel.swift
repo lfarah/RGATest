@@ -34,6 +34,8 @@ class ContactViewModel {
                         contact.birthdate = Date(fromString: birthdateString, format: "dd/MM/yyyy")
                         contact.bio = dic["bio"] as? String ?? ""
                         contact.photoURL = photoString
+                        contact.id = self.generateUniqueId()
+                        
                         DatabaseManager().save(contact: contact)
                     }
                     handler(DatabaseManager().getContacts())
@@ -44,6 +46,12 @@ class ContactViewModel {
                 }
             }
         }
+    }
+    
+    func generateUniqueId() -> String {
+        // Semi-unique id
+        // Created a method so it can be improved later
+        return Date().timeIntervalSince1970.toString
     }
     
     func searchContacts(text: String) -> Results<Contact> {

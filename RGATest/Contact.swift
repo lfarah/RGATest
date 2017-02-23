@@ -16,4 +16,9 @@ class Contact: Object {
     dynamic var birthdate: Date?
     dynamic var bio: String = ""
     dynamic var photoURL: String = ""
+    dynamic var id: String = ""
+
+    override class func primaryKey() -> String? {
+        return "id"
+    }
 }

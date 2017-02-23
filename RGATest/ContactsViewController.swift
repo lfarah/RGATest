@@ -118,7 +118,12 @@ extension ContactsViewController: UITableViewDataSource {
         
         let contact = contacts![indexPath.row]
         cell?.lblContactName.text = contact.name
-        cell?.imgvContact.kf.setImage(with: URL(string: contact.photoURL)!, placeholder: #imageLiteral(resourceName: "EmptyUser"))
+        if let url = URL(string: contact.photoURL) {
+            cell?.imgvContact.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "EmptyUser"))
+        } else {
+            cell?.imgvContact.image = #imageLiteral(resourceName: "EmptyUser")
+        }
+        
         return cell!
     }
 }
@@ -130,6 +135,15 @@ extension ContactsViewController: UITableViewDelegate {
         
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: Constants.Segues.selectedContact, sender: contacts?[indexPath.row])
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        // If user deleted all text and scrolled, removing cancel button
+        if search.text == "" {
+            self.search.showsCancelButton = false
+        }
+        self.search.resignFirstResponder()
     }
 }
 

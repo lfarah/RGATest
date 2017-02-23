@@ -11,6 +11,7 @@ PODS:
   - Realm/Headers (2.4.2)
   - RealmSwift (2.4.2):
     - Realm (= 2.4.2)
+  - SCLAlertView (0.7.0)
   - SkyFloatingLabelTextField (2.0.1)
 
 DEPENDENCIES:
@@ -22,6 +23,7 @@ DEPENDENCIES:
   - Kingfisher
   - KMPlaceholderTextView
   - RealmSwift
+  - SCLAlertView
   - SkyFloatingLabelTextField
 
 SPEC CHECKSUMS:
@@ -34,8 +36,9 @@ SPEC CHECKSUMS:
   KMPlaceholderTextView: 2bbcd19a273648a80a61e1e48f9743a24d8930e3
   Realm: d27b758e12d62a3371879a065d4c40aa212c5a54
   RealmSwift: 9556c0fe0f0cfecacfb755ae9e68ff379fc6bead
+  SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SkyFloatingLabelTextField: 070e749632ffd608d6fd9db3fa488a822524997c
 
-PODFILE CHECKSUM: 14f03100a3e8a175eb691576e6e7f64a8a1e4fdc
+PODFILE CHECKSUM: c1b43e96741f7e15c7e69473026fde1144ee5773
 
 COCOAPODS: 1.2.0.beta.1

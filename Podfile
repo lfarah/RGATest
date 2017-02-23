@@ -15,7 +15,8 @@ target 'RGATest' do
   pod 'DatePickerDialog'
   pod 'ImagePicker'
   pod 'RealmSwift'
-
+  pod 'SCLAlertView'
+  
   target 'RGATestTests' do
     inherit! :search_paths
     # Pods for testing

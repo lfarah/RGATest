@@ -45,6 +45,13 @@ class ContactDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Edit user
+        if let dest = segue.destination as? AddContactViewController {
+            dest.selectedContact = contact
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
