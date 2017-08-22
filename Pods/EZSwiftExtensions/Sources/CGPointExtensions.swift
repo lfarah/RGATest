@@ -6,10 +6,22 @@
 //  Copyright © 2016 Goktug Yilmaz. All rights reserved.
 //
 
+#if os(iOS) || os(tvOS)
+
 import UIKit
 import Foundation
 
 extension CGPoint {
+    
+    /// EZSE: Constructor from CGVector
+    public init(vector: CGVector) {
+        self.init(x: vector.dx, y: vector.dy)
+    }
+    
+    /// EZSE : Constructor from CGFloat
+    public init(angle: CGFloat) {
+        self.init(x: cos(angle), y: sin(angle))
+    }
 
     /// EZSE: Adds two CGPoints.
     public static func + (this: CGPoint, that: CGPoint) -> CGPoint {
@@ -54,3 +66,5 @@ extension CGPoint {
         return startPoint + (endPoint - startPoint) * interpolationParam
     }
 }
+
+#endif

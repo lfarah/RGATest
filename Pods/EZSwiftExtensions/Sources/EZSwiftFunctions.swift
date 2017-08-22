@@ -5,9 +5,10 @@
 //  Created by Goktug Yilmaz on 13/07/15.
 //  Copyright (c) 2015 Goktug Yilmaz. All rights reserved.
 //
-import UIKit
 
 //TODO: others standart video, gif
+
+import Foundation
 
 public struct ez {
     /// EZSE: Returns app's name
@@ -92,6 +93,16 @@ public struct ez {
         return true
     #endif
     }
+    
+    #if !os(macOS)
+    /// EZSE: Returns true if app is running in test flight mode
+    /// Acquired from : http://stackoverflow.com/questions/12431994/detect-testflight
+    public static var isInTestFlight: Bool {
+        return Bundle.main.appStoreReceiptURL?.path.contains("sandboxReceipt") == true 
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
 
     /// EZSE: Returns the top ViewController
     public static var topMostVC: UIViewController? {
@@ -120,6 +131,10 @@ public struct ez {
     public static var verticalSizeClass: UIUserInterfaceSizeClass {
         return self.topMostVC?.traitCollection.verticalSizeClass ?? UIUserInterfaceSizeClass.unspecified
     }
+    
+    #endif
+    
+    #if os(iOS) || os(tvOS)
 
     /// EZSE: Returns screen width
     public static var screenWidth: CGFloat {
@@ -156,6 +171,8 @@ public struct ez {
 
         #endif
     }
+    
+    #endif
 
     #if os(iOS)
 
@@ -179,15 +196,19 @@ public struct ez {
     public static var currentRegion: String? {
         return (Locale.current as NSLocale).object(forKey: NSLocale.Key.countryCode) as? String
     }
+    
+    #if os(iOS) || os(tvOS)
 
     /// EZSE: Calls action when a screen shot is taken
-    public static func detectScreenShot(_ action: @escaping () -> ()) {
+    public static func detectScreenShot(_ action: @escaping () -> Void) {
         let mainQueue = OperationQueue.main
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationUserDidTakeScreenshot, object: nil, queue: mainQueue) { notification in
             // executes after screenshot
             action()
         }
     }
+    
+    #endif
 
     //TODO: Document this, add tests to this
     /// EZSE: Iterates through enum elements, use with (for element in ez.iterateEnum(myEnum))
@@ -205,35 +226,35 @@ public struct ez {
     // MARK: - Dispatch
 
     /// EZSE: Runs the function after x seconds
-    public static func dispatchDelay(_ second: Double, closure:@escaping ()->()) {
+    public static func dispatchDelay(_ second: Double, closure:@escaping () -> Void) {
         DispatchQueue.main.asyncAfter(
             deadline: DispatchTime.now() + Double(Int64(second * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
     }
 
     /// EZSE: Runs function after x seconds
-    public static func runThisAfterDelay(seconds: Double, after: @escaping () -> ()) {
+    public static func runThisAfterDelay(seconds: Double, after: @escaping () -> Void) {
         runThisAfterDelay(seconds: seconds, queue: DispatchQueue.main, after: after)
     }
 
     //TODO: Make this easier
     /// EZSE: Runs function after x seconds with dispatch_queue, use this syntax: dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)
-    public static func runThisAfterDelay(seconds: Double, queue: DispatchQueue, after: @escaping ()->()) {
+    public static func runThisAfterDelay(seconds: Double, queue: DispatchQueue, after: @escaping () -> Void) {
         let time = DispatchTime.now() + Double(Int64(seconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         queue.asyncAfter(deadline: time, execute: after)
     }
 
     /// EZSE: Submits a block for asynchronous execution on the main queue
-    public static func runThisInMainThread(_ block: @escaping ()->()) {
+    public static func runThisInMainThread(_ block: @escaping () -> Void) {
         DispatchQueue.main.async(execute: block)
     }
 
     /// EZSE: Runs in Default priority queue
-    public static func runThisInBackground(_ block: @escaping () -> ()) {
+    public static func runThisInBackground(_ block: @escaping () -> Void) {
         DispatchQueue.global(qos: .default).async(execute: block)
     }
 
     /// EZSE: Runs every second, to cancel use: timer.invalidate()
-    public static func runThisEvery(seconds: TimeInterval, startAfterSeconds: TimeInterval, handler: @escaping (CFRunLoopTimer?) -> Void) -> Timer {
+    @discardableResult public static func runThisEvery(seconds: TimeInterval, startAfterSeconds: TimeInterval, handler: @escaping (CFRunLoopTimer?) -> Void) -> Timer {
         let fireDate = startAfterSeconds + CFAbsoluteTimeGetCurrent()
         let timer = CFRunLoopTimerCreateWithHandler(kCFAllocatorDefault, fireDate, seconds, 0, 0, handler)
         CFRunLoopAddTimer(CFRunLoopGetCurrent(), timer, CFRunLoopMode.commonModes)
@@ -278,6 +299,8 @@ public struct ez {
     }
 
     // MARK: - DownloadTask
+    
+    #if os(iOS) || os(tvOS)
 
     /// EZSE: Downloads image from url string
     public static func requestImage(_ url: String, success: @escaping (UIImage?) -> Void) {
@@ -287,6 +310,8 @@ public struct ez {
             }
         })
     }
+    
+    #endif
 
     /// EZSE: Downloads JSON from url string
     public static func requestJSON(_ url: String, success: @escaping ((Any?) -> Void), error: ((NSError) -> Void)?) {

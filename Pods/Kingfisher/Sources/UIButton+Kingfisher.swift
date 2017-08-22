@@ -46,6 +46,9 @@ extension Kingfisher where Base: UIButton {
      
      - note: Both the `progressBlock` and `completionHandler` will be invoked in main thread.
      The `CallbackDispatchQueue` specified in `optionsInfo` will not be used in callbacks of this method.
+     
+     If `resource` is `nil`, the `placeholder` image will be set and
+     `completionHandler` will be called with both `error` and `image` being `nil`.
      */
     @discardableResult
     public func setImage(with resource: Resource?,
@@ -57,11 +60,12 @@ extension Kingfisher where Base: UIButton {
     {
         guard let resource = resource else {
             base.setImage(placeholder, for: state)
+            setWebURL(nil, for: state)
             completionHandler?(nil, nil, .none, nil)
             return .empty
         }
         
-        let options = options ?? KingfisherEmptyOptionsInfo
+        let options = KingfisherManager.shared.defaultOptions + (options ?? KingfisherEmptyOptionsInfo)
         if !options.keepCurrentImageWhileLoading {
             base.setImage(placeholder, for: state)
         }
@@ -81,10 +85,10 @@ extension Kingfisher where Base: UIButton {
             completionHandler: {[weak base] image, error, cacheType, imageURL in
                 DispatchQueue.main.safeAsync {
                     guard let strongBase = base, imageURL == self.webURL(for: state) else {
+                        completionHandler?(image, error, cacheType, imageURL)
                         return
                     }
                     self.setImageTask(nil)
-                    
                     if image != nil {
                         strongBase.setImage(image, for: state)
                     }
@@ -120,6 +124,9 @@ extension Kingfisher where Base: UIButton {
      
      - note: Both the `progressBlock` and `completionHandler` will be invoked in main thread.
      The `CallbackDispatchQueue` specified in `optionsInfo` will not be used in callbacks of this method.
+     
+     If `resource` is `nil`, the `placeholder` image will be set and
+     `completionHandler` will be called with both `error` and `image` being `nil`.
      */
     @discardableResult
     public func setBackgroundImage(with resource: Resource?,
@@ -131,11 +138,12 @@ extension Kingfisher where Base: UIButton {
     {
         guard let resource = resource else {
             base.setBackgroundImage(placeholder, for: state)
+            setBackgroundWebURL(nil, for: state)
             completionHandler?(nil, nil, .none, nil)
             return .empty
         }
         
-        let options = options ?? KingfisherEmptyOptionsInfo
+        let options = KingfisherManager.shared.defaultOptions + (options ?? KingfisherEmptyOptionsInfo)
         if !options.keepCurrentImageWhileLoading {
             base.setBackgroundImage(placeholder, for: state)
         }
@@ -155,6 +163,7 @@ extension Kingfisher where Base: UIButton {
             completionHandler: { [weak base] image, error, cacheType, imageURL in
                 DispatchQueue.main.safeAsync {
                     guard let strongBase = base, imageURL == self.backgroundWebURL(for: state) else {
+                        completionHandler?(image, error, cacheType, imageURL)
                         return
                     }
                     self.setBackgroundImageTask(nil)
@@ -195,7 +204,7 @@ extension Kingfisher where Base: UIButton {
         return webURLs[NSNumber(value:state.rawValue)] as? URL
     }
     
-    fileprivate func setWebURL(_ url: URL, for state: UIControlState) {
+    fileprivate func setWebURL(_ url: URL?, for state: UIControlState) {
         webURLs[NSNumber(value:state.rawValue)] = url
     }
     
@@ -238,7 +247,7 @@ extension Kingfisher where Base: UIButton {
         return backgroundWebURLs[NSNumber(value:state.rawValue)] as? URL
     }
     
-    fileprivate func setBackgroundWebURL(_ url: URL, for state: UIControlState) {
+    fileprivate func setBackgroundWebURL(_ url: URL?, for state: UIControlState) {
         backgroundWebURLs[NSNumber(value:state.rawValue)] = url
     }
     

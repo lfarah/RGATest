@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Goktug Yilmaz. All rights reserved.
 //
 
+#if os(iOS) || os(tvOS)
+
 import UIKit
 
 extension UILabel {
@@ -56,16 +58,13 @@ extension UILabel {
         self.fitHeight()
         sizeToFit()
     }
-
-    /// EZSwiftExtensions
-    public func setText(_ text: String?, animated: Bool, duration: TimeInterval?) {
-        if animated {
-            UIView.transition(with: self, duration: duration ?? 0.3, options: .transitionCrossDissolve, animations: { () -> Void in
-                self.text = text
-                }, completion: nil)
-        } else {
-            self.text = text
-        }
-
+    
+    /// EZSwiftExtensions (if duration set to 0 animate wont be)
+    public func set(text _text: String?, duration: TimeInterval) {
+        UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve, animations: { () -> Void in
+            self.text = _text
+        }, completion: nil)
     }
 }
+
+#endif

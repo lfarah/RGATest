@@ -119,7 +119,7 @@ class AddContactViewController: UIViewController {
     func didTapBirthdate() {
         
         self.txtBirthdate.resignFirstResponder()
-        DatePickerDialog().show(title: "Selecione a Data de Nascimento", doneButtonTitle: "OK", cancelButtonTitle: "Cancelar", maximumDate: Date(), datePickerMode: .date) { (date) -> Void in
+        DatePickerDialog().show("Selecione a Data de Nascimento", doneButtonTitle: "OK", cancelButtonTitle: "Cancelar", maximumDate: Date(), datePickerMode: .date) { (date) -> Void in
             
             if let date = date {
                 self.selectedDate = date
@@ -134,11 +134,12 @@ class AddContactViewController: UIViewController {
     
     @IBAction func butImage(_ sender: Any) {
         
-        let imagePickerController = ImagePickerController()
-        imagePickerController.imageLimit = 1
-        Configuration.doneButtonTitle = "Terminar"
-        Configuration.noImagesTitle = "Desculpa! Não existe nenhuma imagem aqui!"
+        var configuration = Configuration()
+        configuration.doneButtonTitle = "Terminar"
+        configuration.noImagesTitle = "Desculpa! Não existe nenhuma imagem aqui!"
         
+        let imagePickerController = ImagePickerController(configuration: configuration)
+        imagePickerController.imageLimit = 1
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
     }

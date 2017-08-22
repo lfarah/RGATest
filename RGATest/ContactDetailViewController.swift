@@ -91,12 +91,15 @@ extension ContactDetailViewController: UITableViewDelegate {
         
         if indexPath.row == 0 {
             //Email
-            let recipients = [contact.email]
-            let composer = MFMailComposeViewController()
-            composer.mailComposeDelegate = self
-            composer.setToRecipients(recipients)
             
-            self.present(composer, animated: true, completion: nil)
+            if MFMailComposeViewController.canSendMail() {
+                let recipients = [contact.email]
+                let composer = MFMailComposeViewController()
+                composer.mailComposeDelegate = self
+                composer.setToRecipients(recipients)
+                
+                self.present(composer, animated: true, completion: nil)
+            }
         }
     }
 }

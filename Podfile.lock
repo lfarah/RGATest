@@ -1,18 +1,18 @@
 PODS:
-  - Alamofire (4.3.0)
-  - DatePickerDialog (1.1.7)
-  - EZSwiftExtensions (1.8)
-  - ImagePicker (2.0.0)
-  - IQKeyboardManagerSwift (4.0.8)
-  - Kingfisher (3.4.0)
+  - Alamofire (4.5.0)
+  - DatePickerDialog (1.2)
+  - EZSwiftExtensions (1.11)
+  - ImagePicker (2.1.1)
+  - IQKeyboardManagerSwift (4.0.12)
+  - Kingfisher (3.11.0)
   - KMPlaceholderTextView (1.3.0)
-  - Realm (2.4.2):
-    - Realm/Headers (= 2.4.2)
-  - Realm/Headers (2.4.2)
-  - RealmSwift (2.4.2):
-    - Realm (= 2.4.2)
+  - Realm (2.10.0):
+    - Realm/Headers (= 2.10.0)
+  - Realm/Headers (2.10.0)
+  - RealmSwift (2.10.0):
+    - Realm (= 2.10.0)
   - SCLAlertView (0.7.0)
-  - SkyFloatingLabelTextField (2.0.1)
+  - SkyFloatingLabelTextField (3.2.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -27,18 +27,18 @@ DEPENDENCIES:
   - SkyFloatingLabelTextField
 
 SPEC CHECKSUMS:
-  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
-  DatePickerDialog: bd5e7e92e4da2c6a8966b28d5f5d8f335d6c2c63
-  EZSwiftExtensions: b58e0fe7702e30c4f01bd039658fe84b4fdf5bd5
-  ImagePicker: 81175d36c2852cb543cb4f5d6c19e28f3e8d90eb
-  IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
-  Kingfisher: 5690cfb3d1bddf3a98d679a3a34d0b7294974ed2
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  DatePickerDialog: 03a5f219dbce1a3679c67f8c4478ee04214711f1
+  EZSwiftExtensions: 84000042202d9fd574f626cda3064143f27fa767
+  ImagePicker: fe4c699abb56ff03994fa98d8b02e3883ee118be
+  IQKeyboardManagerSwift: 3c66bea62a7d955b67b0eef0e31522b46261336b
+  Kingfisher: c8911a7672c6217dec8c0520fb6e76ec4b7e0780
   KMPlaceholderTextView: 2bbcd19a273648a80a61e1e48f9743a24d8930e3
-  Realm: d27b758e12d62a3371879a065d4c40aa212c5a54
-  RealmSwift: 9556c0fe0f0cfecacfb755ae9e68ff379fc6bead
+  Realm: 98b3a25643cf6b3e07d2b99fb43fe0eb9c801dec
+  RealmSwift: 34073ad3a31232bbaf7c0db898c037940284cba2
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
-  SkyFloatingLabelTextField: 070e749632ffd608d6fd9db3fa488a822524997c
+  SkyFloatingLabelTextField: 4e2d2f7160af660ed1da6bb9d0027b5c474b4b79
 
 PODFILE CHECKSUM: c1b43e96741f7e15c7e69473026fde1144ee5773
 
-COCOAPODS: 1.2.0.beta.1
+COCOAPODS: 1.2.1

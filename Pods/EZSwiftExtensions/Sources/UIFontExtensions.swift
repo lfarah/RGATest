@@ -6,6 +6,8 @@
 //
 //
 
+#if os(iOS) || os(tvOS)
+
 import UIKit
 
 /// EZSwiftExtensions
@@ -91,7 +93,7 @@ extension UIFont {
         return Font(.AvenirNext, type: .Regular, size: size)
     }
 
-    //MARK: Deprecated
+    // MARK: Deprecated
 
     /// EZSwiftExtensions
     @available(*, deprecated: 1.8)
@@ -102,3 +104,5 @@ extension UIFont {
         }
     }
 }
+
+#endif

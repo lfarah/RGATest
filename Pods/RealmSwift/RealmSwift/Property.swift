@@ -27,7 +27,7 @@ import Realm
 
  Property instances map to columns in the core database.
  */
-public final class Property: CustomStringConvertible {
+public struct Property: CustomStringConvertible {
 
     // MARK: Properties
 
@@ -63,7 +63,7 @@ public final class Property: CustomStringConvertible {
 
 extension Property: Equatable {
     /// Returns whether the two properties are equal.
-    public static func == (lhs: Property, rhs: Property) -> Bool { // swiftlint:disable:this valid_docs
+    public static func == (lhs: Property, rhs: Property) -> Bool {
         return lhs.rlmProperty.isEqual(to: rhs.rlmProperty)
     }
 }
