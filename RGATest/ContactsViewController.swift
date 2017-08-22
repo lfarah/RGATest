@@ -84,6 +84,14 @@ class ContactsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let dest = segue.destination as? ContactDetailViewController {
             dest.contact = sender as? Contact
+        } else {
+            
+            // Resetting filter
+            search.text = ""
+            search.resignFirstResponder()
+            search.showsCancelButton = false
+            contacts = viewModel.searchContacts(text: "")
+            table.reloadData()
         }
     }
     
